@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Recent Content on Yuri Valentini </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.yurivalentini.it/index.xml/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Wed, 17 Sep 2014 23:25:57 CEST</updated>
+    
+    <item>
+      <title>first</title>
+      <link>http://www.yurivalentini.it/post/first/</link>
+      <pubDate>Wed, 17 Sep 2014 23:25:57 CEST</pubDate>
+      
+      <guid>http://www.yurivalentini.it/post/first/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Welcome&lt;/h2&gt;
+
+&lt;p&gt;This post opens my new shiny blog, where I write notes about creative technological fun on my experiments with electronics, 3d printinting and computer programming.
+Hope you enjoy it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>http://www.yurivalentini.it/about/</link>
+      <pubDate>Wed, 17 Sep 2014 23:23:04 CEST</pubDate>
+      
+      <guid>http://www.yurivalentini.it/about/</guid>
+      <description>&lt;p&gt;I am a computer software engineer, living in Italy, that enjoys hacking
+on electronics, mechanics, 3d printing, programming microcontrollers and computers
+in variuous languages.&lt;/p&gt;
+
+&lt;p&gt;I try to reserve a few hours on the weekend or an evening every week, for
+working on personal projects and try new stuff.&lt;/p&gt;
+
+&lt;p&gt;This way I can stay up to date with technology and learn new things.&lt;/p&gt;
+
+&lt;p&gt;The articles in this blog, document the interesting thing I discovere during
+my hackings.&lt;/p&gt;
+
+&lt;p&gt;Happy reading!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

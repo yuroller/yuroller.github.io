@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Posts on Yuri Valentini </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.yurivalentini.it/post/index.xml/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Wed, 17 Sep 2014 23:25:57 CEST</updated>
+    
+    <item>
+      <title>first</title>
+      <link>http://www.yurivalentini.it/post/first/</link>
+      <pubDate>Wed, 17 Sep 2014 23:25:57 CEST</pubDate>
+      
+      <guid>http://www.yurivalentini.it/post/first/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Welcome&lt;/h2&gt;
+
+&lt;p&gt;This post opens my new shiny blog, where I write notes about creative technological fun on my experiments with electronics, 3d printinting and computer programming.
+Hope you enjoy it.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
