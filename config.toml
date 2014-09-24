@@ -1,3 +1,4 @@
 baseurl = "http://www.yurivalentini.it"
 languageCode = "en-us"
 title = "Yuri Valentini"
+publishdir = "_public"
