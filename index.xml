@@ -10,6 +10,73 @@
     <updated>Thu, 25 Sep 2014 00:00:00 UTC</updated>
     
     <item>
+      <title>My Hugo blog on GitHub pages</title>
+      <link>http://www.yurivalentini.it/blog/2014/09/25/My-Hugo-blog-on-GitHub-pages/</link>
+      <pubDate>Thu, 25 Sep 2014 00:00:00 UTC</pubDate>
+      <author>Yuri Valentini</author>
+      <guid>http://www.yurivalentini.it/blog/2014/09/25/My-Hugo-blog-on-GitHub-pages/</guid>
+      <description>
+
+&lt;p&gt;This post opens my new shiny blog, where I write notes about creative technological fun on my experiments with electronics, 3d printing and computer programming.&lt;/p&gt;
+
+&lt;p&gt;The blog uses &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; static website generator and is deployed on &lt;a href=&#34;https://pages.github.com&#34;&gt;GitHub Pages&lt;/a&gt;.
+I hope you enjoy it; meanwhile here are some notes about the procedure I used to set it up and to deploy it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Setting up my blog&lt;/h3&gt;
+
+&lt;p&gt;Create username.github.io repository on GitHub and clone the repository with
+&lt;code&gt;bash
+git clone git@github.com:username/username.github.io.git
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Create a branch where the files for Hugo to process are stored:
+&lt;code&gt;bash
+git checkout --orphan source
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We don&amp;rsquo;t need a readme file on source branch:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git rm README.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As Hugo doesn&amp;rsquo;t let you generate a new site in a directory where there are already files, generate the site skelethon in another directory with:
+&lt;code&gt;bash
+hugo new site dirname
+&lt;/code&gt;
+and move files to local git repository username.github.io;.&lt;/p&gt;
+
+&lt;p&gt;Commit what we have done so far:
+&lt;code&gt;bash
+git add .
+git commit -m &amp;quot;hugo skelethon&amp;quot;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Add a theme as a git subtree, but first give it a name as remote repository:
+&lt;code&gt;bash
+git remote add -f hyde-my https://github.com/spf13/hyde.git
+git subtree add --prefix themes/hyde hyde-my master --squash
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Edit blog content and commit, then push the source branch to github:
+&lt;code&gt;bash
+git push -u origin source
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Generate the website and switch to master branch where the generated page should be stored
+&lt;code&gt;bash
+hugo -t hyde-yv
+git checkout master
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Copy contents of public directory in root github repo, add files, commit and push to github.&lt;/p&gt;
+
+&lt;p&gt;Now the website should be online.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>License</title>
       <link>http://www.yurivalentini.it/license/</link>
       <pubDate>Thu, 25 Sep 2014 00:00:00 UTC</pubDate>
@@ -39,73 +106,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>My Hugo blog on GitHub pages</title>
-      <link>http://www.yurivalentini.it/blog/2014/09/25/My-Hugo-blog-on-GitHub-pages/</link>
-      <pubDate>Thu, 25 Sep 2014 00:00:00 UTC</pubDate>
-      <author>Yuri Valentini</author>
-      <guid>http://www.yurivalentini.it/blog/2014/09/25/My-Hugo-blog-on-GitHub-pages/</guid>
-      <description>
-
-&lt;p&gt;This post opens my new shiny blog, where I write notes about creative technological fun on my experiments with electronics, 3d printing and computer programming.&lt;/p&gt;
-
-&lt;p&gt;The blog uses &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; static website generator and is deployed on &lt;a href=&#34;https://pages.github.com&#34;&gt;GitHub Pages&lt;/a&gt;.
-I hope you enjoy it; meanwhile here are some notes about the procedure I used to set it up and to deploy it.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;toc_0&#34;&gt;Setting up my blog&lt;/h3&gt;
-
-&lt;p&gt;Create username.github.io repository on GitHub and clone the repository with
-&lt;code&gt;shell
-git clone git@github.com:username/username.github.io.git
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Create a branch where the files for Hugo to process are stored:
-&lt;code&gt;shell
-git checkout --orphan source
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;We don&amp;rsquo;t need a readme file on source branch:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git rm README.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As Hugo doesn&amp;rsquo;t let you generate a new site in a directory where there are already files, generate the site skelethon in another directory with:
-&lt;code&gt;shell
-hugo new site dirname
-&lt;/code&gt;
-and move files to local git repository username.github.io;.&lt;/p&gt;
-
-&lt;p&gt;Commit what we have done so far:
-&lt;code&gt;shell
-git add .
-git commit -m &amp;quot;hugo skelethon&amp;quot;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Add a theme as a git subtree, but first give it a name as remote repository:
-&lt;code&gt;shell
-git remote add -f hyde-my https://github.com/spf13/hyde.git
-git subtree add --prefix themes/hyde hyde-my master --squash
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Edit blog content and commit, then push the source branch to github:
-&lt;code&gt;shell
-git push -u origin source
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Generate the website and switch to master branch where the generated page should be stored
-&lt;code&gt;shell
-hugo -t hyde-yv
-git checkout master
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Copy contents of public directory in root github repo, add files, commit and push to github.&lt;/p&gt;
-
-&lt;p&gt;Now the website should be online.&lt;/p&gt;
 </description>
     </item>
     
