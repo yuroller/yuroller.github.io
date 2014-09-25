@@ -1,4 +1,51 @@
 baseurl = "http://www.yurivalentini.it"
 languageCode = "en-us"
-title = "Yuri Valentini"
+title = "Yuri Valentini's blog"
 publishdir = "_public"
+#disqusShortname = "your_disqus_shortname" # Optional, enable Disqus integration
+MetaDataFormat = "toml"
+
+[author]
+    name = "Yuri Valentini"
+
+[permalinks]
+    # Optional. Change the permalink format for the 'post' content type.
+    # The format shown here is the same one Jekyll/Octopress uses.
+    post = "/blog/:year/:month/:day/:title/"
+
+#
+# All parameters below here are optional and can be mixed and matched.
+#
+[params]
+    # Used when a given page doesn't set its own.
+    defaultDescription = "Random experiences about technology"
+    defaultKeywords = "technology, 3d printing, computer programming, electronics"
+
+    # Changes sidebar background and link/accent colours.
+    # See the original Hyde theme for more colour options.
+    # This also works: "theme-base-08 layout-reverse", or just "layout-reverse".
+	theme = "theme-base-0f layout-reverse"
+
+    # Select a syntax highight.
+    # Check the static/css/highlight directory for options.
+    highlight = "monokay"
+
+    # Displays under the author name in the sidebar, keep it short.
+	tagline = "Having Fun with Technology."
+
+    # Metadata used to drive integrations.
+	googleAuthorship = "103525561410406183448"
+    googleAnalytics = "UA-55167200-1"
+    gravatarHash = "596fc59cf927e9192865e7f3de12f87d"
+
+    # Sidebar social links, avoid enabling too many of these if possible.
+    # These should be full URLs.
+    github = "http://github.com/yuroller/"
+    linkedin = "http://it.linkedin.com/in/yurivalentini/"
+    googleplus = ""
+    facebook = ""
+    twitter = ""
+
+[indexes]
+    tag = "tags"
+    topic = "topics"
