@@ -73,49 +73,50 @@ I hope you enjoy it; meanwhile here are some notes about the procedure I used to
 
 <h3 id="toc_0">Setting up my blog</h3>
 
-<p>Create username.github.io repository on GitHub and clone the repository with
-<code>bash
-git clone git@github.com:username/username.github.io.git
-</code></p>
+<p>Create username.github.io repository on GitHub and clone the repository with</p>
 
-<p>Create a branch where the files for Hugo to process are stored:
-<code>bash
-git checkout --orphan source
-</code></p>
+<pre><code class="language-bash">git clone git@github.com:username/username.github.io.git
+</code></pre>
+
+<p>Create a branch where the files for Hugo to process are stored:</p>
+
+<pre><code class="language-bash">git checkout --orphan source
+</code></pre>
 
 <p>We don&rsquo;t need a readme file on source branch:</p>
 
 <pre><code class="language-bash">git rm README.md
 </code></pre>
 
-<p>As Hugo doesn&rsquo;t let you generate a new site in a directory where there are already files, generate the site skelethon in another directory with:
-<code>bash
-hugo new site dirname
-</code>
-and move files to local git repository username.github.io;.</p>
+<p>As Hugo doesn&rsquo;t let you generate a new site in a directory where there are already files, generate the site skelethon in another directory with:</p>
 
-<p>Commit what we have done so far:
-<code>bash
-git add .
+<pre><code class="language-bash">hugo new site dirname
+</code></pre>
+
+<p>and move files to local git repository username.github.io;.</p>
+
+<p>Commit what we have done so far:</p>
+
+<pre><code class="language-bash">git add .
 git commit -m &quot;hugo skelethon&quot;
-</code></p>
+</code></pre>
 
-<p>Add a theme as a git subtree, but first give it a name as remote repository:
-<code>bash
-git remote add -f hyde-my https://github.com/spf13/hyde.git
+<p>Add a theme as a git subtree, but first give it a name as remote repository:</p>
+
+<pre><code class="language-bash">git remote add -f hyde-my https://github.com/spf13/hyde.git
 git subtree add --prefix themes/hyde hyde-my master --squash
-</code></p>
+</code></pre>
 
-<p>Edit blog content and commit, then push the source branch to github:
-<code>bash
-git push -u origin source
-</code></p>
+<p>Edit blog content and commit, then push the source branch to github:</p>
 
-<p>Generate the website and switch to master branch where the generated page should be stored
-<code>bash
-hugo -t hyde-yv
+<pre><code class="language-bash">git push -u origin source
+</code></pre>
+
+<p>Generate the website and switch to master branch where the generated page should be stored</p>
+
+<pre><code class="language-bash">hugo -t hyde-yv
 git checkout master
-</code></p>
+</code></pre>
 
 <p>Copy contents of public directory in root github repo, add files, commit and push to github.</p>
 
