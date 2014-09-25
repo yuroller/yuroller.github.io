@@ -6,14 +6,14 @@ title = "about"
 
 I am a computer software engineer, living in Italy, that enjoys hacking
 on electronics, mechanics, 3d printing, programming microcontrollers and computers
-in variuous languages.
+in variuous programming languages.
 
 I try to reserve a few hours on the weekend or an evening every week, for
 working on personal projects and try new stuff.
 
 This way I can stay up to date with technology and learn new things.
 
-The articles in this blog, document the interesting thing I discovere during
+The articles in this blog, document the interesting thing I discover during
 my hackings.
 
 Happy reading!
