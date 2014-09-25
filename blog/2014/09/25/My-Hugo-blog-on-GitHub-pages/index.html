@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>Posts &middot; Yuri Valentini</title>
+  <title>My Hugo blog on GitHub pages &middot; Yuri Valentini</title>
 
   
   <link rel="stylesheet" href="http://www.yurivalentini.it/css/poole.css">
@@ -23,10 +23,10 @@
   <link href="/favicon.png" rel="icon">
 
   
-  <link href="http://www.yurivalentini.it/post/index.xml/" rel="alternate" type="application/rss+xml" title="Yuri Valentini&#39;s blog &middot; Yuri Valentini" />
+  <link href="" rel="alternate" type="application/rss+xml" title="Yuri Valentini&#39;s blog &middot; Yuri Valentini" />
 
-  <meta name="description" content="Random experiences about technology">
-  <meta name="keywords" content="technology, 3d printing, computer programming, electronics">
+  <meta name="description" content="Setting up my Hugo generated blog and deploying on GitHub">
+  <meta name="keywords" content="blog,github,hugo,deployment">
   <link rel="author" href="http://plus.google.com/103525561410406183448">
 </head>
 <body class="theme-base-0f layout-reverse">
@@ -59,12 +59,75 @@
 </div>
 
 <div class="content container">
-  <ul class="posts">
+  <div class="post">
+    <h1>My Hugo blog on GitHub pages</h1>
+    <span class="post-date">Sep 25, 2014 &middot; 2 minute read</span>
+    
+
+<p>This post opens my new shiny blog, where I write notes about creative technological fun on my experiments with electronics, 3d printing and computer programming.</p>
+
+<p>The blog uses <a href="http://gohugo.io">Hugo</a> static website generator and is deployed on <a href="https://pages.github.com">GitHub Pages</a>.
+I hope you enjoy it; meanwhile here are some notes about the procedure I used to set it up and to deploy it.</p>
+
+<hr />
+
+<h3 id="toc_0">Setting up my blog</h3>
+
+<p>Create username.github.io repository on GitHub and clone the repository with
+<code>shell
+git clone git@github.com:username/username.github.io.git
+</code></p>
+
+<p>Create a branch where the files for Hugo to process are stored:
+<code>shell
+git checkout --orphan source
+</code></p>
+
+<p>We don&rsquo;t need a readme file on source branch:</p>
+
+<pre><code class="language-shell">git rm README.md
+</code></pre>
+
+<p>As Hugo doesn&rsquo;t let you generate a new site in a directory where there are already files, generate the site skelethon in another directory with:
+<code>shell
+hugo new site dirname
+</code>
+and move files to local git repository username.github.io;.</p>
+
+<p>Commit what we have done so far:
+<code>shell
+git add .
+git commit -m &quot;hugo skelethon&quot;
+</code></p>
+
+<p>Add a theme as a git subtree, but first give it a name as remote repository:
+<code>shell
+git remote add -f hyde-my https://github.com/spf13/hyde.git
+git subtree add --prefix themes/hyde hyde-my master --squash
+</code></p>
+
+<p>Edit blog content and commit, then push the source branch to github:
+<code>shell
+git push -u origin source
+</code></p>
+
+<p>Generate the website and switch to master branch where the generated page should be stored
+<code>shell
+hugo -t hyde-yv
+git checkout master
+</code></p>
+
+<p>Copy contents of public directory in root github repo, add files, commit and push to github.</p>
+
+<p>Now the website should be online.</p>
+
+  </div>
   
-    <li><a href="http://www.yurivalentini.it/blog/2014/09/25/My-Hugo-blog-on-GitHub-pages/">My Hugo blog on GitHub pages</a> &middot; <time>Sep 25, 2014</time></li>
-  
-  </ul>
 </div>
+
+
+
+
 <script src="http://www.yurivalentini.it/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 

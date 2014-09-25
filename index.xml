@@ -1,48 +1,135 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Recent Content on Yuri Valentini </title>
+      <title>Recent Content on Yuri Valentini&#39;s blog </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
     <link>http://www.yurivalentini.it/index.xml/</link>
     <language>en-us</language>
+    <author>Yuri Valentini</author>
     
-    
-    <updated>Wed, 17 Sep 2014 23:25:57 CEST</updated>
+    <updated>Thu, 25 Sep 2014 00:00:00 UTC</updated>
     
     <item>
-      <title>first</title>
-      <link>http://www.yurivalentini.it/post/first/</link>
-      <pubDate>Wed, 17 Sep 2014 23:25:57 CEST</pubDate>
-      
-      <guid>http://www.yurivalentini.it/post/first/</guid>
+      <title>License</title>
+      <link>http://www.yurivalentini.it/license/</link>
+      <pubDate>Thu, 25 Sep 2014 00:00:00 UTC</pubDate>
+      <author>Yuri Valentini</author>
+      <guid>http://www.yurivalentini.it/license/</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Welcome&lt;/h2&gt;
+&lt;h3 id=&#34;toc_0&#34;&gt;Content license&lt;/h3&gt;
 
-&lt;p&gt;This post opens my new shiny blog, where I write notes about creative technological fun on my experiments with electronics, 3d printinting and computer programming.
-Hope you enjoy it.&lt;/p&gt;
+&lt;p&gt;All non-code blog content is licensed under &lt;a href=&#34;http://creativecommons.org/licenses/by-nc-sa/3.0/&#34;&gt;Creative Commons BY-NC-SA&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Code license&lt;/h3&gt;
+
+&lt;p&gt;All source code files and snippets found on this blog, unless otherwise explicitly noted, are licensed under the terms below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;Copyright 2014 Valentini Yuri
+
+Licensed under the Apache License, Version 2.0 (the &amp;quot;License&amp;quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &amp;quot;AS IS&amp;quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
     <item>
-      <title>about</title>
+      <title>My Hugo blog on GitHub pages</title>
+      <link>http://www.yurivalentini.it/blog/2014/09/25/My-Hugo-blog-on-GitHub-pages/</link>
+      <pubDate>Thu, 25 Sep 2014 00:00:00 UTC</pubDate>
+      <author>Yuri Valentini</author>
+      <guid>http://www.yurivalentini.it/blog/2014/09/25/My-Hugo-blog-on-GitHub-pages/</guid>
+      <description>
+
+&lt;p&gt;This post opens my new shiny blog, where I write notes about creative technological fun on my experiments with electronics, 3d printing and computer programming.&lt;/p&gt;
+
+&lt;p&gt;The blog uses &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; static website generator and is deployed on &lt;a href=&#34;https://pages.github.com&#34;&gt;GitHub Pages&lt;/a&gt;.
+I hope you enjoy it; meanwhile here are some notes about the procedure I used to set it up and to deploy it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Setting up my blog&lt;/h3&gt;
+
+&lt;p&gt;Create username.github.io repository on GitHub and clone the repository with
+&lt;code&gt;shell
+git clone git@github.com:username/username.github.io.git
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Create a branch where the files for Hugo to process are stored:
+&lt;code&gt;shell
+git checkout --orphan source
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We don&amp;rsquo;t need a readme file on source branch:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git rm README.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As Hugo doesn&amp;rsquo;t let you generate a new site in a directory where there are already files, generate the site skelethon in another directory with:
+&lt;code&gt;shell
+hugo new site dirname
+&lt;/code&gt;
+and move files to local git repository username.github.io;.&lt;/p&gt;
+
+&lt;p&gt;Commit what we have done so far:
+&lt;code&gt;shell
+git add .
+git commit -m &amp;quot;hugo skelethon&amp;quot;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Add a theme as a git subtree, but first give it a name as remote repository:
+&lt;code&gt;shell
+git remote add -f hyde-my https://github.com/spf13/hyde.git
+git subtree add --prefix themes/hyde hyde-my master --squash
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Edit blog content and commit, then push the source branch to github:
+&lt;code&gt;shell
+git push -u origin source
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Generate the website and switch to master branch where the generated page should be stored
+&lt;code&gt;shell
+hugo -t hyde-yv
+git checkout master
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Copy contents of public directory in root github repo, add files, commit and push to github.&lt;/p&gt;
+
+&lt;p&gt;Now the website should be online.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
       <link>http://www.yurivalentini.it/about/</link>
       <pubDate>Wed, 17 Sep 2014 23:23:04 CEST</pubDate>
-      
+      <author>Yuri Valentini</author>
       <guid>http://www.yurivalentini.it/about/</guid>
-      <description>&lt;p&gt;I am a computer software engineer, living in Italy, that enjoys hacking
-on electronics, mechanics, 3d printing, programming microcontrollers and computers
-in variuous languages.&lt;/p&gt;
+      <description>
 
-&lt;p&gt;I try to reserve a few hours on the weekend or an evening every week, for
-working on personal projects and try new stuff.&lt;/p&gt;
+&lt;p&gt;I am a computer software engineer, living in &lt;a href=&#34;http://en.wikipedia.org/wiki/Modena&#34;&gt;Modena (Italy)&lt;/a&gt;, working as a programmer mainly in C, C++, &lt;a href=&#34;http://www.python.org&#34;&gt;Python&lt;/a&gt;, &lt;a href=&#34;http://www.nodejs.org&#34;&gt;node.js&lt;/a&gt; programming languages, in industrial automation, voip software and biotech labs intruments industry.&lt;/p&gt;
 
-&lt;p&gt;This way I can stay up to date with technology and learn new things.&lt;/p&gt;
+&lt;p&gt;I enjoys hacking on electronics, mechanics, 3d printing, programming microcontrollers and computers end experimenting with various programming languages.&lt;/p&gt;
 
-&lt;p&gt;The articles in this blog, document the interesting thing I discovere during
-my hackings.&lt;/p&gt;
+&lt;p&gt;I try to reserve a few hours on the weekend or an evening every week, for working on personal projects and try new stuff, this way I can stay up to date with technology and learn new things.&lt;/p&gt;
+
+&lt;p&gt;The articles in this blog document the interesting things I discover during my spare time experiments.&lt;/p&gt;
 
 &lt;p&gt;Happy reading!&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Contact&lt;/h3&gt;
+
+&lt;p&gt;You can reach me by email at yuroller [AT] gmail [DOT] com&lt;/p&gt;
 </description>
     </item>
     
